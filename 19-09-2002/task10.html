@@ -1,0 +1,35 @@
+<!-- sort string according to ASCII value of characters -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task10</title>
+  </head>
+  <body>
+    <p>Task : To sort string according to ASCII value of characters</p>
+    <div id="input">
+      Enter String:
+      <input type="text" name="message" id="myMessage" />
+      <br />
+      <br />
+      <input type="button" value="Submit" onclick="print()" />
+      <br />
+    </div>
+    <div id="output">
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+    <script>
+      function print() {
+        var str = document.getElementById("myMessage").value;
+        var str2 = str.split("");
+        var str3 = str2.sort();
+        document.getElementById("print").innerHTML =
+          "The string " + str + " has " + str3;
+      }
+    </script>
+  </body>
+</html>

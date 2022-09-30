@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 500px;
+        height: auto;
+        margin: 10px;
+        border: 10px solid black;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="[path to paramquery]/jsZip-2.5.0/jszip.min.js"
+    ></script>
+  </head>
+  <body>
+    <form>
+      <input type="file" id="file" multiple accept=".png, .jpg, .jpeg" />
+      <button type="button" onclick="upload()">Upload</button>
+    </form>
+    <br />
+    <button type="button" onclick="download()">Download</button>
+    <!-- <button type="button" onclick="downloadaszip()">Download as ZIP</button> -->
+    <br />
+    <div id="result"></div>
+    <script>
+      function upload() {
+        var files = document.getElementById("file").files;
+        for (var i = 0; i < files.length; i++) {
+          var reader = new FileReader();
+
+          reader.readAsDataURL(files[i]);
+
+          reader.onload = function (e) {
+            var img = new Image();
+
+            img.src = e.target.result;
+
+            document.getElementById("result").appendChild(img);
+          };
+        }
+      }
+      function download() {
+        var img = document.getElementById("result").getElementsByTagName("img");
+        for (var i = 0; i < img.length; i++) {
+          var a = document.createElement("a");
+          a.href = img[i].src;
+          a.download = "image" + i + ".png";
+          a.click();
+        }
+      }
+      function downloadaszip() {
+        var img = document.getElementById("result").getElementsByTagName("img");
+        var zip = new JSZip();
+        for (var i = 0; i < img.length; i++) {
+          zip.file("image" + i + ".png", img[i].src, { base64: true });
+        }
+        zip.generateAsync({ type: "blob" }).then(function (content) {
+          saveAs(content, "images.zip");
+        });
+      }
+    </script>
+  </body>
+</html>

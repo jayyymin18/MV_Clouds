@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .input {
+        width: 100%;
+        height: 100px;
+        font-size: 20px;
+      }
+      input {
+        height: auto;
+        width: 5%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="input">
+      <input type="number" id="ele1" min="0" max="1" />
+      <input type="number" id="ele2" min="0" max="1" />
+      <input type="number" id="ele3" min="0" max="1" />
+      <input type="number" id="ele4" min="0" max="1" />
+      <input type="number" id="ele5" min="0" max="1" />
+      <input type="number" id="ele6" min="0" max="1" />
+      <input type="number" id="ele7" min="0" max="1" />
+      <br />
+      <input type="number" id="ele8" min="0" max="1" />
+      <input type="number" id="ele9" min="0" max="1" />
+      <input type="number" id="ele10" min="0" max="1" />
+      <input type="number" id="ele11" min="0" max="1" />
+      <input type="number" id="ele12" min="0" max="1" />
+      <input type="number" id="ele13" min="0" max="1" />
+      <input type="number" id="ele14" min="0" max="1" />
+      <br />
+      <input type="number" id="ele15" min="0" max="1" />
+      <input type="number" id="ele16" min="0" max="1" />
+      <input type="number" id="ele17" min="0" max="1" />
+      <input type="number" id="ele18" min="0" max="1" />
+      <input type="number" id="ele19" min="0" max="1" />
+      <input type="number" id="ele20" min="0" max="1" />
+      <input type="number" id="ele21" min="0" max="1" />
+      <br />
+      <input type="number" id="ele22" min="0" max="1" />
+      <input type="number" id="ele23" min="0" max="1" />
+      <input type="number" id="ele24" min="0" max="1" />
+      <input type="number" id="ele25" min="0" max="1" />
+      <input type="number" id="ele26" min="0" max="1" />
+      <input type="number" id="ele27" min="0" max="1" />
+      <input type="number" id="ele28" min="0" max="1" />
+      <br />
+      <input type="number" id="ele29" min="0" max="1" />
+      <input type="number" id="ele30" min="0" max="1" />
+      <input type="number" id="ele31" min="0" max="1" />
+      <input type="number" id="ele32" min="0" max="1" />
+      <input type="number" id="ele33" min="0" max="1" />
+      <input type="number" id="ele34" min="0" max="1" />
+      <input type="number" id="ele35" min="0" max="1" />
+      <br />
+      <br />
+      <button onclick="startfun()">Submit</button>
+    </div>
+    <div id="output">
+      <p id="result"></p>
+    </div>
+    <div>
+      <p id="printarray"></p>
+    </div>
+
+    <script>
+      //function which allows user to enter 0 or 1
+
+      function startfun() {
+        var arr = generatearr();
+        printarray(arr);
+        validateinput(arr);
+        var result = isPath(arr);
+        if (result) {
+          document.getElementById("result").innerHTML = "Yes path is avaialble";
+        } else {
+          document.getElementById("result").innerHTML =
+            "No path is not avaialble";
+        }
+      }
+
+      function validateinput() {
+        var ele1 = document.getElementById("ele1").value;
+        var ele2 = document.getElementById("ele2").value;
+        var ele3 = document.getElementById("ele3").value;
+        var ele4 = document.getElementById("ele4").value;
+        var ele5 = document.getElementById("ele5").value;
+        var ele6 = document.getElementById("ele6").value;
+        var ele7 = document.getElementById("ele7").value;
+        var ele8 = document.getElementById("ele8").value;
+        var ele9 = document.getElementById("ele9").value;
+        var ele10 = document.getElementById("ele10").value;
+        var ele11 = document.getElementById("ele11").value;
+        var ele12 = document.getElementById("ele12").value;
+        var ele13 = document.getElementById("ele13").value;
+        var ele14 = document.getElementById("ele14").value;
+        var ele15 = document.getElementById("ele15").value;
+        var ele16 = document.getElementById("ele16").value;
+        var ele17 = document.getElementById("ele17").value;
+        var ele18 = document.getElementById("ele18").value;
+        var ele19 = document.getElementById("ele19").value;
+        var ele20 = document.getElementById("ele20").value;
+        var ele21 = document.getElementById("ele21").value;
+        var ele22 = document.getElementById("ele22").value;
+        var ele23 = document.getElementById("ele23").value;
+        var ele24 = document.getElementById("ele24").value;
+        var ele25 = document.getElementById("ele25").value;
+        var ele26 = document.getElementById("ele26").value;
+        var ele27 = document.getElementById("ele27").value;
+        var ele28 = document.getElementById("ele28").value;
+        var ele29 = document.getElementById("ele29").value;
+        var ele30 = document.getElementById("ele30").value;
+        var ele31 = document.getElementById("ele31").value;
+        var ele32 = document.getElementById("ele32").value;
+        var ele33 = document.getElementById("ele33").value;
+        var ele34 = document.getElementById("ele34").value;
+        var ele35 = document.getElementById("ele35").value;
+
+        for (var i = 1; i <= 35; i++) {
+          if (
+            document.getElementById("ele" + i).value > 1 ||
+            document.getElementById("ele" + i).value < 0
+          ) {
+            alert("Please enter 0 or 1");
+            return false;
+          }
+        }
+      }
+
+      function printarray(arr) {
+        var str = "";
+        for (var i = 0; i < arr.length; i++) {
+          for (var j = 0; j < arr[i].length; j++) {
+            str += arr[i][j] + " ";
+          }
+          str += "<br>";
+        }
+        document.getElementById("printarray").innerHTML = str;
+      }
+
+      function generatearr() {
+        var arr = [];
+        for (var i = 0; i < 5; i++) {
+          arr[i] = [];
+          for (var j = 0; j < 7; j++) {
+            arr[i][j] = document.getElementById("ele" + (i * 7 + j + 1)).value;
+          }
+        }
+        return arr;
+      }
+
+      var row = 5;
+      var col = 7;
+
+      // To find the path from
+      // top left to bottom right
+      function isPath(arr) {
+        var dir = [
+          [0, 1],
+          [0, 1],
+          [1, 0],
+          [1, 0],
+        ];
+
+        var q = [];
+
+        q.push([0, 0]);
+
+        while (q.length > 0) {
+          var p = q[0];
+          q.shift();
+
+          arr[p[0]][p[1]] = 1;
+
+          if (p[0] == row - 1 && p[1] == col - 1) return true;
+
+          for (var i = 0; i < 4; i++) {
+            var a = p[0] + dir[i][0];
+            var b = p[1] + dir[i][1];
+
+            if (a >= 0 && b >= 0 && a < row && b < col && arr[a][b] != 1) {
+              if (a == row - 1 && b == col - 1) return true;
+              q.push([a, b]);
+            }
+          }
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>

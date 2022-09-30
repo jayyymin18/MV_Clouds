@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task1</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: large;
+        font-family: "Times New Roman", Times, serif;
+      }
+      input {
+        height: auto;
+        width: 80%;
+      }
+      button {
+        /*Center button*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Task1 : Maze problem</h1>
+    <div>
+      <p>Enter array:</p>
+      <input type="text" id="input" />
+      <br />
+      <br />
+      <button onclick="getArray()">Submit</button>
+    </div>
+
+    <div>
+      <p id="printarray"></p>
+    </div>
+
+    <div>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      // JavaScript program to find if there is path
+      // from top left to right bottom\
+
+      var row = 5;
+      var col = 7;
+
+      // To find the path from top left to bottom right
+      function isPath(arr) {
+        // Directions
+        var dir = [
+          [0, 1],
+          [0, 1],
+          [1, 0],
+          [1, 0],
+        ];
+
+        // Queue
+        var q = [];
+
+        // Insert the top right corner.
+        q.push([0, 0]);
+
+        // Until queue is empty
+        while (q.length > 0) {
+          var p = q[0];
+          q.shift();
+
+          // Mark as visited
+          arr[p[0]][p[1]] = 1;
+
+          // Destination is reached.
+          if (p[0] == row - 1 && p[1] == col - 1) return true;
+
+          // Check all four directions
+          for (var i = 0; i < 4; i++) {
+            // Using the direction array
+            var a = p[0] + dir[i][0];
+            var b = p[1] + dir[i][1];
+
+            // Not blocked and valid
+            if (a >= 0 && b >= 0 && a < row && b < col && arr[a][b] != 1) {
+              if (a == row - 1 && b == col - 1) return true;
+              q.push([a, b]);
+            }
+          }
+        }
+        return false;
+      }
+
+      //function to take input from user
+      function getArray() {
+        var input = document.getElementById("input").value;
+        //convert string to array
+        var arr = input.split(",").map((item) => parseInt(item));
+        //convert array to 2d array
+        var arr2d = [];
+        while (arr.length) arr2d.push(arr.splice(0, col));
+        //call function to check path
+        var result = isPath(arr2d);
+        if (result) {
+          document.getElementById("result").innerHTML = "Path exists";
+        } else {
+          document.getElementById("result").innerHTML = "Path does not exist";
+        }
+        printArray(arr2d);
+      }
+
+      //print 2d array with rows and columns
+      function printArray(arr) {
+        var str = "";
+        for (var i = 0; i < row; i++) {
+          for (var j = 0; j < col; j++) {
+            str += arr[i][j] + " ";
+          }
+          str += "<br>";
+        }
+        document.getElementById("printarray").innerHTML = str;
+      }
+    </script>
+  </body>
+</html>

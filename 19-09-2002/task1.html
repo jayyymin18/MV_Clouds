@@ -1,0 +1,36 @@
+<!-- append " something" behind entered text -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task1</title>
+  </head>
+  <body>
+    <p>Task : To append " something" behind the string entered</p>
+    <div id="myForm">
+      Message:
+      <input type="text" name="message" id="myMessage" />
+      <br />
+      <br />
+      <input type="button" value="Submit" onclick="print()" />
+      <br />
+    </div>
+    <div>
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+
+    <script type="text/javascript">
+      function print() {
+        document.getElementById("print").innerHTML = "";
+        var msgElement = document.getElementById("myMessage");
+        var msg = msgElement.value;
+        msg = msgElement.value + " Something";
+        document.getElementById("print").innerHTML = msg;
+      }
+    </script>
+  </body>
+</html>

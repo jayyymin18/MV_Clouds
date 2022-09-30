@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task2-Simple Calculator</title>
+  </head>
+  <body>
+    <p>Task : To create a simple calculator</p>
+    <div id="input">
+      Enter Number 1:
+      <input type="number" name="message" id="myMessage1" />
+      <br />
+      <br />
+      Enter Number 2:
+      <input type="number" name="message" id="myMessage2" />
+      <br />
+      <br />
+      <input type="button" value="Add" onclick="add()" />
+      <input type="button" value="Subtract" onclick="subtract()" />
+      <input type="button" value="Multiply" onclick="multiply()" />
+      <input type="button" value="Divide" onclick="divide()" />
+      <br />
+    </div>
+    <div id="output">
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+    <script>
+      function add() {
+        var num1 = document.getElementById("myMessage1").value;
+        var num2 = document.getElementById("myMessage2").value;
+        var sum = parseInt(num1) + parseInt(num2);
+        document.getElementById("print").innerHTML =
+          "The sum of " + num1 + " and " + num2 + " is " + sum;
+      }
+      function subtract() {
+        var num1 = document.getElementById("myMessage1").value;
+        var num2 = document.getElementById("myMessage2").value;
+        var difference = parseInt(num1) - parseInt(num2);
+        document.getElementById("print").innerHTML =
+          "The difference of " + num1 + " and " + num2 + " is " + difference;
+      }
+      function multiply() {
+        var num1 = document.getElementById("myMessage1").value;
+        var num2 = document.getElementById("myMessage2").value;
+        var product = parseInt(num1) * parseInt(num2);
+        document.getElementById("print").innerHTML =
+          "The product of " + num1 + " and " + num2 + " is " + product;
+      }
+      function divide() {
+        var num1 = document.getElementById("myMessage1").value;
+        var num2 = document.getElementById("myMessage2").value;
+        var quotient = parseInt(num1) / parseInt(num2);
+        document.getElementById("print").innerHTML =
+          "The quotient of " + num1 + " and " + num2 + " is " + quotient;
+      }
+    </script>
+  </body>
+</html>

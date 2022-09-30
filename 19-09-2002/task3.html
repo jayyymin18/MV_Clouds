@@ -1,0 +1,44 @@
+<!-- count the number of time substring appears in the string -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task3</title>
+  </head>
+  <body>
+    <p>Task : To count the number of time substring appears in the string</p>
+    <div id="input">
+      Enter String:
+      <input type="text" name="message" id="myMessage" />
+      Enter Substring:
+      <input type="text" name="message" id="mySubString" />
+      <br />
+      <br />
+      <input type="button" value="Submit" onclick="print()" />
+      <br />
+    </div>
+    <div id="output">
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+    <script>
+      function print() {
+        var str = document.getElementById("myMessage").value;
+        var subStr = document.getElementById("mySubString").value;
+        //count the number of times the substring appears in the string
+        var count = str.split(subStr).length - 1;
+        //print the number of times the substring appears in the string
+        document.getElementById("print").innerHTML =
+          "The substring " +
+          subStr +
+          " appears " +
+          count +
+          " times in the string " +
+          str;
+      }
+    </script>
+  </body>
+</html>

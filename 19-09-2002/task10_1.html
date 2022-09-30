@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task10_1</title>
+  </head>
+  <body>
+    <div id="input">
+      Enter String:
+      <input type="text" name="message" id="myMessage" />
+      <br />
+      <br />
+      <input type="button" value="Submit" onclick="print()" />
+      <br />
+    </div>
+    <div id="output">
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+    <script>
+      //arrange in alphabetical order
+      function print() {
+        var str = document.getElementById("myMessage").value;
+        var arr = str.split("");
+        arr.sort();
+        document.getElementById("print").innerHTML = arr.join("");
+      }
+    </script>
+  </body>
+</html>

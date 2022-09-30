@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task3-Return Factors</title>
+  </head>
+  <body>
+    <p>Task : Print all the Factors</p>
+    <div id="input">
+      Enter Number:
+      <input type="number" name="message" id="myMessage" />
+      <br />
+      <br />
+      <input type="button" value="Submit" onclick="print()" />
+      <br />
+    </div>
+    <div id="output">
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+    <script>
+      //store factors in array and print array
+      function print() {
+        var num = document.getElementById("myMessage").value;
+        var factors = [];
+        for (var i = 1; i <= num; i++) {
+          if (num % i == 0) {
+            factors.push(i);
+          }
+        }
+        document.getElementById("print").innerHTML =
+          "Factors of " + num + " are " + factors;
+      }
+    </script>
+  </body>
+</html>

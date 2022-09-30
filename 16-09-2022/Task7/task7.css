@@ -1,0 +1,124 @@
+body {
+    background-color: #000;
+}
+
+.grid {
+    margin: 50px auto;
+    position: relative;
+    width: 400px;
+    height: 50vh;
+}
+
+.a {
+    border-top: 5px solid red;
+    border-bottom: 5px solid red;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    animation: anim 5s linear infinite;
+}
+
+.a:hover, .b:hover, .c:hover, .d:hover, .e:hover, .f:hover, .g:hover {
+    animation-play-state: paused;
+    background-color: black;
+}
+
+.b {
+    border: 10px dashed gray;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 60%;
+    left: 36%;
+    animation: ani 25s linear infinite;
+}
+
+.c {
+    border-left: 5px dotted gray;
+    border-right: 5px solid red;
+    border-top: 5px dotted yellow;
+    border-bottom: 5px dotted yellow;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    top: 26%;
+    left: 12%;
+    animation: anim 35s linear infinite;
+}
+
+.d {
+    border-top: 5px solid #444;
+    border-bottom: 5px solid #444;
+    border-left: 5px solid yellow;
+    border-right: 5px solid yellow;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    animation: ani 45s linear infinite;
+}
+
+.e {
+
+    border-radius: 50%;
+    width: 300px;
+    height: 290px;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    animation: anim 55s linear infinite;
+}
+
+.f {
+    border-top: 15px dashed black;
+    border-bottom: 15px solid #fff;
+    border-left: 15px dashed red;
+    border-right: 15px solid red;
+    border-radius: 50%;
+    width: 420px;
+    height: 420px;
+    position: absolute;
+    top: 30px;
+    left: -1px;
+    animation: ani 55s linear infinite;
+}
+
+.g {
+    border: 15px dashed #444;
+    border-radius: 50%;
+    width: 480px;
+    height: 480px;
+    position: absolute;
+    top: 5px;
+    left: -25px;
+    animation: anim 45s linear infinite;
+}
+
+@keyframes ani {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes anim {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}

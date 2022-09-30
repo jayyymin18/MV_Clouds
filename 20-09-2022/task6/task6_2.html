@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task6 - Login Page</title>
+    <style>
+      body {
+        background-image: url(img.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      form {
+        background-color: whitesmoke;
+        width: 30%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 100px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 28%;
+        transform: translate(-50%, -50%);
+      }
+      form p {
+        font-size: 15px;
+        font-weight: 600;
+        color: #a52a2a;
+        text-align: left;
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="input">
+      <form>
+        <header>
+          <h3>Sign Up</h3>
+        </header>
+        <!-- Sign Up form -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+        <br />
+        <br />
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password" />
+        <br />
+        <br />
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" />
+        <br />
+        <br />
+        <input type="submit" value="Sign Up" />
+        <p id="output"></p>
+      </form>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      const output = document.querySelector("#output");
+      form.addEventListener("submit", (e) => {
+        //jump to another page
+        e.preventDefault();
+        const username = document.querySelector("#username").value;
+        const password = document.querySelector("#password").value;
+        const email = document.querySelector("#email").value;
+        if (username === "" || password === "" || email === "") {
+          output.innerHTML = "Please fill all the fields";
+        } else {
+          output.innerHTML = "You have successfully signed up";
+          window.location.href = "task6.html";
+        }
+      });
+    </script>
+  </body>
+</html>

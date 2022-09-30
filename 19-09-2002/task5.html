@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task5</title>
+  </head>
+  <body>
+    <p>Task : To print table of number entered by user</p>
+    <div id="input">
+      Enter Two digit number:
+      <input type="number" name="message" id="myMessage" />
+      <br />
+      <br />
+      <input type="button" value="Submit" onclick="print()" />
+      <br />
+    </div>
+    <div id="output">
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+    <script>
+      //check if the number is two digit
+      function print() {
+        var num = document.getElementById("myMessage").value;
+        if (num.length == 2) {
+          //check if swapping the digits will make the number bigger
+          if (num[0] < num[1]) {
+            document.getElementById("print").innerHTML =
+              "Swapping the digits will make the number bigger";
+          } else {
+            document.getElementById("print").innerHTML =
+              "Swapping the digits will make the number smaller";
+          }
+        } else {
+          document.getElementById("print").innerHTML =
+            num + " is not a two digit number";
+        }
+      }
+    </script>
+  </body>
+</html>

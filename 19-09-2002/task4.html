@@ -1,0 +1,37 @@
+<!-- print table of number entered by user -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task4</title>
+  </head>
+  <body>
+    <p>Task : To print table of number entered by user</p>
+    <div id="input">
+      Enter Number:
+      <input type="number" name="message" id="myMessage" />
+      <br />
+      <br />
+      <input type="button" value="Submit" onclick="print()" />
+      <br />
+    </div>
+    <div id="output">
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+    <script>
+      //print table of number entered by user
+      function print() {
+        var num = document.getElementById("myMessage").value;
+        var table = "";
+        for (var i = 1; i <= 10; i++) {
+          table += num + " x " + i + " = " + num * i + "<br>";
+        }
+        document.getElementById("print").innerHTML = table;
+      }
+    </script>
+  </body>
+</html>

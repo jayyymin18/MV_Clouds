@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task4 - print according to ASCII value</title>
+  </head>
+  <body>
+    <p>
+      Task : if character has it's ASCII value even it will get capatalized and
+      if ASCII value is odd it will retrun in lower case
+    </p>
+    <div id="input">
+      Enter Message:
+      <input type="text" name="message" id="myMessage" />
+      <br />
+      <br />
+      <input type="button" value="Submit" onclick="print()" />
+      <br />
+    </div>
+    <div id="output">
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+    <script>
+      function print() {
+        var str = document.getElementById("myMessage").value;
+        var newStr = "";
+        for (var i = 0; i < str.length; i++) {
+          if (str.charCodeAt(i) % 2 == 0) {
+            newStr += str.charAt(i).toUpperCase();
+          } else {
+            newStr += str.charAt(i).toLowerCase();
+          }
+        }
+        document.getElementById("print").innerHTML = newStr;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task6</title>
+  </head>
+  <body>
+    <div id="input">
+      Enter Number:
+      <input type="number" name="message" id="myMessage" />
+      >><input type="number" name="message" id="shift" />
+
+      <br />
+      <br />
+      <input type="button" value="Submit" onclick="print()" />
+      <br />
+    </div>
+    <div id="output">
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+    <script>
+      //find right shift of number withour using >> operator
+      function print() {
+        var dig = document.getElementById("shift").value;
+        var num = document.getElementById("myMessage").value;
+        var div = 2 ** dig;
+        var rightShift = num / div;
+        //calculate floor of number
+        var floor = Math.floor(rightShift);
+        document.getElementById("print").innerHTML =
+          "Right shift of " + num + " is " + floor;
+      }
+    </script>
+  </body>
+</html>

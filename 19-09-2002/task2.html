@@ -1,0 +1,37 @@
+<!-- count the amount of digits in the entered number -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task2</title>
+  </head>
+  <body>
+    <p>Task : To count the amount of digits in the entered number</p>
+    <div id="input">
+      Enter Number:
+      <input type="number" name="message" id="myMessage" />
+      <br />
+      <br />
+      <input type="button" value="Submit" onclick="print()" />
+      <br />
+    </div>
+    <div id="output">
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+    <script>
+      function print() {
+        //amount of digits in the number
+        var digits = document.getElementById("myMessage").value.length;
+        //the number itself
+        var num = document.getElementById("myMessage").value;
+        //print the number of digits
+        document.getElementById("print").innerHTML =
+          num + " has " + digits + " digits";
+      }
+    </script>
+  </body>
+</html>

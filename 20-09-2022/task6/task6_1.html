@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task6: Dashboard</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Outfit&family=Poppins&family=Raleway:wght@600&family=Roboto:wght@500&display=swap");
+
+      body {
+        background-color: white;
+      }
+
+      tr:hover {
+        background-color: #d2cece;
+      }
+
+      header {
+        background-color: #333;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: whitesmoke;
+      }
+      table {
+        border-collapse: collapse;
+        font-family: "Poppins", sans-serif;
+        border-spacing: 0;
+        border: 1px solid black;
+        width: 100%;
+        color: black;
+        font-family: "Roboto", sans-serif;
+        text-align: left;
+        font-size: 20px;
+      }
+      th {
+        color: white;
+        text-align: center;
+        font-family: "Raleway", sans-serif;
+        font-size: 25px;
+        background-color: #333;
+      }
+      tr,
+      td,
+      th {
+        border: 1px solid black;
+      }
+      td:nth-child(1),
+      td:nth-child(3) {
+        text-align: center;
+      }
+
+      #hello {
+        font-family: "Raleway", sans-serif;
+        font-size: 20px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="dashboard">
+      <header>Dashboard</header>
+      <div class="welcome">
+        <p id="hello">Hello User!</p>
+      </div>
+      <table>
+        <tr>
+          <th>Sr.No.</th>
+          <th>Task</th>
+          <th>Links</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Task1: Image display on hover</td>
+          <td><a href="../task1.html" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Task2: Simple Calculator</td>
+          <td><a href="../task2.html" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Task3: Print factors of the number</td>
+          <td><a href="../task3.html" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>
+            Task4: Capatalize character if ASCII value is even else convert it
+            to smaller case
+          </td>
+          <td><a href="../task4.html" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>
+            Task5: Print Greatest and Smallest number from the list of number
+            entered
+          </td>
+          <td><a href="../task5.html" target="_blank">Link</a></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      alert("Login Successful");
+    </script>
+  </body>
+</html>

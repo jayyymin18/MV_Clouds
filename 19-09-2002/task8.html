@@ -1,0 +1,46 @@
+<!-- count number of vowels in the string -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task8</title>
+  </head>
+  <body>
+    <p>Task : To count number of vowels in the string</p>
+    <div id="input">
+      Enter String:
+      <input type="text" name="message" id="myMessage" />
+      <br />
+      <br />
+      <input type="button" value="Submit" onclick="print()" />
+      <br />
+    </div>
+    <div id="output">
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+    <script>
+      //print the number of vowels used in the string
+      function print() {
+        var str = document.getElementById("myMessage").value;
+        var count = 0;
+        for (var i = 0; i < str.length; i++) {
+          if (
+            str.charAt(i) == "a" ||
+            str.charAt(i) == "e" ||
+            str.charAt(i) == "i" ||
+            str.charAt(i) == "o" ||
+            str.charAt(i) == "u"
+          ) {
+            count++;
+          }
+        }
+        document.getElementById("print").innerHTML =
+          "The string " + str + " has " + count + " vowels";
+      }
+    </script>
+  </body>
+</html>

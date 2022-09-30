@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <style>
+      input[type="file"] {
+        display: block;
+      }
+      .imageThumb {
+        max-height: 75px;
+        border: 2px solid;
+        padding: 1px;
+        cursor: pointer;
+      }
+      .pip {
+        display: inline-block;
+        margin: 10px 10px 0 0;
+      }
+      .remove {
+        display: block;
+        background: #444;
+        border: 1px solid black;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+      }
+      .remove:hover {
+        background: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input type="file" id="file" multiple accept="image" />
+      <button type="button" onclick="upload()">Upload</button>
+    </form>
+    <div id="result"></div>
+    <script>
+      //upload multiple image and display
+      function upload() {
+        var file = document.getElementById("file").files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+          var result = document.getElementById("result");
+          result.innerHTML = `<img src="${reader.result}" />`;
+        };
+        reader.onerror = function (error) {
+          console.log("Error: ", error);
+        };
+      }
+    </script>
+  </body>
+</html>

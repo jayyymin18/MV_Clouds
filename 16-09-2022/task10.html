@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>task10</title>
+    <style type="text/css">
+      body {
+        margin: 30px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <!-- Enter number of rows -->
+      <label for="rows">Rows:</label>
+      <input type="number" id="rows" name="rows" value="5" min="1" max="10" />
+      <!-- Enter number of columns -->
+      <label for="columns">Columns:</label>
+      <input
+        type="number"
+        id="columns"
+        name="columns"
+        value="5"
+        min="1"
+        max="10"
+      />
+
+      <input type="button" onclick="createTable()" value="Create the table" />
+
+      <!-- delete the table -->
+      <input type="button" onclick="deleteTable()" value="Delete the table" />
+      <br />
+    </form>
+    <br />
+    <br />
+    <div>
+      <table id="myTable" border="1"></table>
+    </div>
+    <script>
+      function createTable() {
+        document.getElementById("myTable").innerHTML = "";
+        var rn = document.getElementById("rows").value;
+        var cn = document.getElementById("columns").value;
+        for (var r = 0; r < parseInt(rn, 10); r++) {
+          var x = document.getElementById("myTable").insertRow(r);
+          for (var c = 0; c < parseInt(cn, 10); c++) {
+            var y = x.insertCell(c);
+          }
+        }
+      }
+      function deleteTable() {
+        var rn = document.getElementById("rows").value;
+        var cn = document.getElementById("columns").value;
+        for (var r = 0; r < parseInt(rn, 10); r++) {
+          document.getElementById("myTable").deleteRow(0);
+        }
+      }
+    </script>
+  </body>
+</html>

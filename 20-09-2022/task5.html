@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task5-Space Seperated number</title>
+  </head>
+  <body>
+    <p>
+      Task: Take input of space seperated number and will print largest and
+      smallest number in array
+    </p>
+    <div id="input">
+      Enter Number:
+      <input type="text" name="message" id="myMessage" />
+      <br />
+      <br />
+      <input type="button" value="Submit" onclick="print()" />
+      <br />
+    </div>
+    <div id="output">
+      <p id="print">
+        <!-- This is where the message will be displayed -->
+      </p>
+    </div>
+    <script>
+      //store numbers in array
+      //sort array
+      //print first and last element
+      function print() {
+        var str = document.getElementById("myMessage").value;
+        var arr = str.split(" ");
+        arr.sort(function (a, b) {
+          return a - b;
+        });
+        document.getElementById("print").innerHTML =
+          "Largest Number is " +
+          arr[arr.length - 1] +
+          " and Smallest Number is " +
+          arr[0];
+      }
+    </script>
+  </body>
+</html>
